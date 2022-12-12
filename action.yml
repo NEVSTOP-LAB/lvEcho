@@ -1,0 +1,43 @@
+name: "lvEcho"
+author: "NEVSTOP"
+description: "use lvCICD to echo your inputs"
+branding:
+  icon: "anchor"
+  color: "green"
+
+inputs:
+  LabVIEW_Version:
+    description: "LabVIEW Version Used"
+    required: false
+    default: "2019"
+  Architecture:
+    description: "32bit/64bit Version of LabVIEW Used"
+    required: false
+    default: "x86"
+  Input1:
+    description: "Input1"
+    required: false
+    default: ""
+  Input2:
+    description: "Input2"
+    required: false
+    default: ""
+  Input3:
+    description: "Input3"
+    required: false
+    default: ""
+
+runs:
+  using: "composite"
+
+  steps:
+    - id: echo
+      uses: LV-APT/lvCICD@main
+      with:
+        LabVIEW_Version: ${{ inputs.LabVIEW_Version }}
+        Architecture: ${{ inputs.Architecture }}
+        Operation: lvEcho
+        Parameter1: ${{ inputs.Input1 }}
+        Parameter2: ${{ inputs.Input2 }}
+        Parameter3: ${{ inputs.Input3 }}
+
