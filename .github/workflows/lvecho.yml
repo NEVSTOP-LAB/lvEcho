@@ -16,7 +16,6 @@ jobs:
         id: lvEcho
         uses: NEVSTOP-LAB/lvEcho@main
         with:
-          Operation: lvEcho
           LabVIEW_Version: 2017
           Input1: "line1"
           Input2: "line2"
