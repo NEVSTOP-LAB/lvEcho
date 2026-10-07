@@ -12,9 +12,10 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - uses: actions/checkout@v4
       - name: TestEnvironment
         id: lvEcho
-        uses: NEVSTOP-LAB/lvEcho@main
+        uses: ./
         with:
           LabVIEW_Version: 2017
           Input1: "line1"
